@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resonancia — Recursos para Guitarra</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Canvas 3D Background -->
+    <canvas id="webgl-canvas"></canvas>
+    
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="#" class="logo">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                    <path d="M14 2C14 2 6 8 6 16C6 21.5 9.5 26 14 26C18.5 26 22 21.5 22 16C22 8 14 2 14 2Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M14 8V18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    <circle cx="14" cy="14" r="1.5" fill="currentColor"/>
+                </svg>
+                <span>Resonancia</span>
+            </a>
+            <div class="nav-links">
+                <a href="#herramientas">Herramientas</a>
+                <a href="#guia">Guía</a>
+                <a href="#acordes">Acordes</a>
+                <a href="#rutinas">Rutinas</a>
+            </div>
+            <button class="nav-toggle" aria-label="Menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <div class="nav-mobile">
+            <a href="#herramientas">Herramientas</a>
+            <a href="#guia">Guía</a>
+            <a href="#acordes">Acordes</a>
+            <a href="#rutinas">Rutinas</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <p class="hero-label">Recursos para iniciación</p>
+            <h1 class="hero-title">
+                <span class="line">Tu primera</span>
+                <span class="line">guitarra</span>
+            </h1>
+            <p class="hero-subtitle">Una colección curada de herramientas, guías y recursos para quienes empiezan desde cero. Sin teoría abrumadora, sin atajos imposibles.</p>
+            <div class="hero-cta">
+                <a href="#herramientas" class="btn-primary">
+                    <span>Explorar recursos</span>
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+                <a href="#guia" class="btn-secondary">Cómo empezar</a>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <span>Desplazar</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- Herramientas Section -->
+    <section class="section tools" id="herramientas">
+        <div class="section-header">
+            <p class="section-label">Herramientas</p>
+            <h2 class="section-title">Todo lo que necesitas,<br>en un solo lugar</h2>
+        </div>
+        
+        <div class="tools-grid">
+            <!-- Tuner -->
+            <div class="tool-card" data-tool="tuner">
+                <div class="tool-visual">
+                    <div class="tuner-display">
+                        <div class="tuner-needle-container">
+                            <div class="tuner-needle"></div>
+                        </div>
+                        <div class="tuner-note">E</div>
+                        <div class="tuner-string">6ª Cuerda</div>
+                    </div>
+                    <button class="tool-btn" id="tuner-toggle">Activar Afinador</button>
+                </div>
+                <div class="tool-info">
+                    <h3>Afinador</h3>
+                    <p>Afina tu guitarra con precisión. Soporte para afinación estándar EADGBE.</p>
+                </div>
+            </div>
+
+            <!-- Metronome -->
+            <div class="tool-card" data-tool="metronome">
+                <div class="tool-visual">
+                    <div class="metronome-display">
+                        <div class="metronome-bpm">60</div>
+                        <div class="metronome-label">BPM</div>
+                        <div class="metronome-beat"></div>
+                    </div>
+                    <div class="metronome-controls">
+                        <button class="tool-btn secondary" id="metro-minus">−</button>
+                        <button class="tool-btn" id="metro-toggle">Iniciar</button>
+                        <button class="tool-btn secondary" id="metro-plus">+</button>
+                    </div>
+                </div>
+                <div class="tool-info">
+                    <h3>Metrónomo</h3>
+                    <p>Desarrolla tu sentido del ritmo. Controla el tempo desde 40 hasta 208 BPM.</p>
+                </div>
+            </div>
+
+            <!-- Chord Library -->
+            <div class="tool-card wide" data-tool="chords">
+                <div class="tool-visual chord-visual">
+                    <div class="chord-selector">
+                        <button class="chord-tab active" data-chord="C">C</button>
+                        <button class="chord-tab" data-chord="G">G</button>
+                        <button class="chord-tab" data-chord="D">D</button>
+                        <button class="chord-tab" data-chord="Em">Em</button>
+                        <button class="chord-tab" data-chord="Am">Am</button>
+                    </div>
+                    <div class="chord-diagram" id="chord-diagram">
+                        <!-- SVG chord diagram generated by JS -->
+                    </div>
+                </div>
+                <div class="tool-info">
+                    <h3>Biblioteca de Acordes</h3>
+                    <p>Los cinco acordes esenciales para empezar. Visualiza posiciones y digitaciones.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guía Section -->
+    <section class="section guide" id="guia">
+        <div class="section-header">
+            <p class="section-label">Primeros pasos</p>
+            <h2 class="section-title">El camino de<br>30 días</h2>
+        </div>
+        
+        <div class="timeline">
+            <div class="timeline-line"></div>
+            
+            <div class="timeline-item">
+                <div class="timeline-dot">1</div>
+                <div class="timeline-content">
+                    <span class="timeline-week">Semana 1</span>
+                    <h3>Conocer la guitarra</h3>
+                    <p>Partes de la guitarra, cómo sujetarla correctamente, nombres de las cuerdas y primer ejercicio de coordinación.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-dot">2</div>
+                <div class="timeline-content">
+                    <span class="timeline-week">Semana 2</span>
+                    <h3>Primeros acordes</h3>
+                    <p>Em, Am, C, G, D. Aprende a leer diagramas y evita el sonido apagado.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-dot">3</div>
+                <div class="timeline-content">
+                    <span class="timeline-week">Semana 3</span>
+                    <h3>Ritmo y púa</h3>
+                    <p>Cómo usar la púa, rasgueos básicos, ritmo de 4 tiempos y uso del metrónomo.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-dot">4</div>
+                <div class="timeline-content">
+                    <span class="timeline-week">Semana 4</span>
+                    <h3>Tus primeras canciones</h3>
+                    <p>Canciones con 2-3 acordes, cambios fluidos, y tu primera grabación.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Acordes Section -->
+    <section class="section chords-section" id="acordes">
+        <div class="section-header">
+            <p class="section-label">Fundamentos</p>
+            <h2 class="section-title">Los cinco acordes<br>que lo cambian todo</h2>
+        </div>
+        
+        <div class="chords-showcase">
+            <div class="chord-card" data-chord="C">
+                <div class="chord-name">C</div>
+                <div class="chord-type">Mayor</div>
+                <svg class="chord-svg" viewBox="0 0 100 120"></svg>
+                <div class="chord-detail">Do Mayor — El acorde más utilizado en música popular.</div>
+            </div>
+            <div class="chord-card" data-chord="G">
+                <div class="chord-name">G</div>
+                <div class="chord-type">Mayor</div>
+                <svg class="chord-svg" viewBox="0 0 100 120"></svg>
+                <div class="chord-detail">Sol Mayor — El compañero natural de C en miles de canciones.</div>
+            </div>
+            <div class="chord-card" data-chord="D">
+                <div class="chord-name">D</div>
+                <div class="chord-type">Mayor</div>
+                <svg class="chord-svg" viewBox="0 0 100 120"></svg>
+                <div class="chord-detail">Re Mayor — Brillante y resolutivo.</div>
+            </div>
+            <div class="chord-card" data-chord="Em">
+                <div class="chord-name">Em</div>
+                <div class="chord-type">Menor</div>
+                <svg class="chord-svg" viewBox="0 0 100 120"></svg>
+                <div class="chord-detail">Mi Menor — Melancólico y versátil, solo dos dedos.</div>
+            </div>
+            <div class="chord-card" data-chord="Am">
+                <div class="chord-name">Am</div>
+                <div class="chord-type">Menor</div>
+                <svg class="chord-svg" viewBox="0 0 100 120"></svg>
+                <div class="chord-detail">La Menor — El primer menor que aprenden la mayoría.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rutinas Section -->
+    <section class="section routines" id="rutinas">
+        <div class="section-header">
+            <p class="section-label">Práctica</p>
+            <h2 class="section-title">Rutinas para<br>cada momento</h2>
+        </div>
+        
+        <div class="routines-grid">
+            <div class="routine-card">
+                <div class="routine-time">5<span>min</span></div>
+                <h3>Rutina Express</h3>
+                <ul>
+                    <li>Afinar la guitarra <span>30s</span></li>
+                    <li>Cambio Em → Am <span>2min</span></li>
+                    <li>Rasgueo básico <span>2min</span></li>
+                    <li>Revisar postura <span>30s</span></li>
+                </ul>
+            </div>
+            
+            <div class="routine-card featured">
+                <div class="routine-time">10<span>min</span></div>
+                <h3>Rutina Diaria</h3>
+                <ul>
+                    <li>Afinar <span>1min</span></li>
+                    <li>Ejercicio de dedos <span>2min</span></li>
+                    <li>Acorde del día <span>3min</span></li>
+                    <li>Cambios de acordes <span>3min</span></li>
+                    <li>Rasgueo con metrónomo <span>1min</span></li>
+                </ul>
+            </div>
+            
+            <div class="routine-card">
+                <div class="routine-time">20<span>min</span></div>
+                <h3>Rutina Completa</h3>
+                <ul>
+                    <li>Calentamiento <span>3min</span></li>
+                    <li>Revisar acordes aprendidos <span>5min</span></li>
+                    <li>Nuevo acorde o técnica <span>5min</span></li>
+                    <li>Practicar canción <span>5min</span></li>
+                    <li>Libre / improvisar <span>2min</span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <svg width="24" height="24" viewBox="0 0 28 28" fill="none">
+                    <path d="M14 2C14 2 6 8 6 16C6 21.5 9.5 26 14 26C18.5 26 22 21.5 22 16C22 8 14 2 14 2Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M14 8V18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    <circle cx="14" cy="14" r="1.5" fill="currentColor"/>
+                </svg>
+                <span>Resonancia</span>
+            </div>
+            <p class="footer-text">Hecho para un amigo que se compró una guitarra y no tenía ni idea. Espero que ahora tenga menos.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

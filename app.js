@@ -265,6 +265,38 @@ const initAnimations = () => {
             ease: 'power3.out'
         });
     });
+    
+    // Resource cards
+    gsap.utils.toArray('.resource-card').forEach((card, i) => {
+        gsap.from(card, {
+            scrollTrigger: {
+                trigger: card,
+                start: 'top 85%',
+                toggleActions: 'play none none none'
+            },
+            opacity: 0,
+            y: 40,
+            duration: 0.8,
+            delay: i * 0.08,
+            ease: 'power3.out'
+        });
+    });
+    
+    // Quick start section
+    const quickStart = document.querySelector('.quick-start');
+    if (quickStart) {
+        gsap.from(quickStart, {
+            scrollTrigger: {
+                trigger: quickStart,
+                start: 'top 85%',
+                toggleActions: 'play none none none'
+            },
+            opacity: 0,
+            y: 50,
+            duration: 1,
+            ease: 'power3.out'
+        });
+    }
 };
 
 /* ===== NAVIGATION SCROLL EFFECT ===== */
@@ -680,25 +712,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initAnimations();
     initNav();
     initMobileNav();
-    initChords();
-    initMetronome();
-    initTuner();
-    initSmoothScroll();
-});
-document.addEventListener('DOMContentLoaded', () => {
-    initWebGL();
-    initAnimations();
-    initNav();
-    initMobileNav();
-    initChords();
-    initMetronome();
-    initTuner();
-    initSmoothScroll();
-});
-document.addEventListener('DOMContentLoaded', () => {
-    initWebGL();
-    initAnimations();
-    initNav();
     initChords();
     initMetronome();
     initTuner();

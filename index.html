@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resonancia — Recursos para Guitarra</title>
+    <title>Resonancia — Aprende guitarra desde cero</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -28,11 +28,12 @@
                 <span>Resonancia</span>
             </a>
             <div class="nav-links">
-                <a href="#herramientas">Herramientas</a>
-                <a href="#recursos">Recursos</a>
-                <a href="#guia">Guía</a>
+                <a href="#guitarra">Tu guitarra</a>
+                <a href="#cuerdas">Cuerdas</a>
+                <a href="#afinar">Afinar</a>
+                <a href="#ritmo">Ritmo</a>
                 <a href="#acordes">Acordes</a>
-                <a href="#rutinas">Rutinas</a>
+                <a href="#recursos">Recursos</a>
             </div>
             <button class="nav-toggle" aria-label="Menú">
                 <span></span>
@@ -41,31 +42,32 @@
             </button>
         </div>
         <div class="nav-mobile">
-            <a href="#herramientas">Herramientas</a>
-            <a href="#recursos">Recursos</a>
-            <a href="#guia">Guía</a>
+            <a href="#guitarra">Tu guitarra</a>
+            <a href="#cuerdas">Cuerdas</a>
+            <a href="#afinar">Afinar</a>
+            <a href="#ritmo">Ritmo</a>
             <a href="#acordes">Acordes</a>
-            <a href="#rutinas">Rutinas</a>
+            <a href="#recursos">Recursos</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero" id="inicio">
         <div class="hero-content">
-            <p class="hero-label">Recursos para iniciación</p>
+            <p class="hero-label">Nunca has tocado una guitarra?</p>
             <h1 class="hero-title">
-                <span class="line">Tu primera</span>
-                <span class="line">guitarra</span>
+                <span class="line">Vamos</span>
+                <span class="line">despacio</span>
             </h1>
-            <p class="hero-subtitle">Una colección curada de herramientas, guías y recursos para quienes empiezan desde cero. Sin teoría abrumadora, sin atajos imposibles.</p>
+            <p class="hero-subtitle">No necesitas saber qué es un mástil ni una cejilla para empezar. Solo necesitas curiosidad y 5 minutos. Te explico todo paso a paso.</p>
             <div class="hero-cta">
-                <a href="#herramientas" class="btn-primary">
-                    <span>Explorar recursos</span>
+                <a href="#guitarra" class="btn-primary">
+                    <span>Conocer mi guitarra</span>
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                         <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </a>
-                <a href="#guia" class="btn-secondary">Cómo empezar</a>
+                <a href="#cuerdas" class="btn-secondary">Escuchar las cuerdas</a>
             </div>
         </div>
         <div class="hero-scroll">
@@ -74,15 +76,307 @@
         </div>
     </section>
 
-    <!-- Herramientas Section -->
-    <section class="section tools" id="herramientas">
+    <!-- PARTE 1: CONOCE TU GUITARRA -->
+    <section class="section guitar-explore" id="guitarra">
         <div class="section-header">
-            <p class="section-label">Herramientas</p>
-            <h2 class="section-title">Todo lo que necesitas,<br>en un solo lugar</h2>
+            <p class="section-label">Parte 1 — Conocer</p>
+            <h2 class="section-title">¿Qué es cada<br>cosa de esto?</h2>
         </div>
         
-        <div class="tools-grid">
-            <!-- Tuner -->
+        <p class="section-intro">Antes de tocar, vamos a aprender los nombres. Pasa el ratón (o toca en móvil) sobre cada parte para descubrir qué es.</p>
+        
+        <div class="guitar-diagram-wrapper">
+            <div class="guitar-diagram">
+                <svg viewBox="0 0 200 520" class="guitar-svg">
+                    <!-- Guitar body -->
+                    <ellipse cx="100" cy="380" rx="55" ry="70" fill="none" stroke="var(--text-muted)" stroke-width="1.5"/>
+                    <ellipse cx="100" cy="380" rx="20" ry="25" fill="none" stroke="var(--text-muted)" stroke-width="1"/>
+                    
+                    <!-- Neck -->
+                    <rect x="88" y="100" width="24" height="200" fill="none" stroke="var(--text-muted)" stroke-width="1.5" rx="2"/>
+                    
+                    <!-- Headstock -->
+                    <path d="M82 20 Q82 5 100 5 Q118 5 118 20 L118 90 L118 100 L82 100 Z" fill="none" stroke="var(--text-muted)" stroke-width="1.5"/>
+                    
+                    <!-- Tuning pegs -->
+                    <circle cx="72" cy="35" r="5" fill="none" stroke="var(--text-muted)" stroke-width="1"/>
+                    <circle cx="72" cy="55" r="5" fill="none" stroke="var(--text-muted)" stroke-width="1"/>
+                    <circle cx="72" cy="75" r="5" fill="none" stroke="var(--text-muted)" stroke-width="1"/>
+                    <circle cx="128" cy="35" r="5" fill="none" stroke="var(--text-muted)" stroke-width="1"/>
+                    <circle cx="128" cy="55" r="5" fill="none" stroke="var(--text-muted)" stroke-width="1"/>
+                    <circle cx="128" cy="75" r="5" fill="none" stroke="var(--text-muted)" stroke-width="1"/>
+                    
+                    <!-- Strings -->
+                    <line x1="94" y1="25" x2="94" y2="440" stroke="var(--text-muted)" stroke-width="0.8"/>
+                    <line x1="97" y1="25" x2="97" y2="440" stroke="var(--text-muted)" stroke-width="0.8"/>
+                    <line x1="100" y1="25" x2="100" y2="440" stroke="var(--text-muted)" stroke-width="0.8"/>
+                    <line x1="103" y1="25" x2="103" y2="440" stroke="var(--text-muted)" stroke-width="0.8"/>
+                    <line x1="106" y1="25" x2="106" y2="440" stroke="var(--text-muted)" stroke-width="0.8"/>
+                    <line x1="109" y1="25" x2="109" y2="440" stroke="var(--text-muted)" stroke-width="0.8"/>
+                    
+                    <!-- Frets -->
+                    <line x1="88" y1="120" x2="112" y2="120" stroke="var(--text-muted)" stroke-width="0.5"/>
+                    <line x1="88" y1="140" x2="112" y2="140" stroke="var(--text-muted)" stroke-width="0.5"/>
+                    <line x1="88" y1="160" x2="112" y2="160" stroke="var(--text-muted)" stroke-width="0.5"/>
+                    <line x1="88" y1="180" x2="112" y2="180" stroke="var(--text-muted)" stroke-width="0.5"/>
+                    <line x1="88" y1="200" x2="112" y2="200" stroke="var(--text-muted)" stroke-width="0.5"/>
+                    <line x1="88" y1="220" x2="112" y2="220" stroke="var(--text-muted)" stroke-width="0.5"/>
+                    
+                    <!-- Interactive hotspots -->
+                    <!-- Headstock -->
+                    <circle cx="100" cy="50" r="25" class="hotspot" data-part="headstock" fill="transparent" stroke="var(--accent)" stroke-width="2" stroke-dasharray="4 4" opacity="0.4"/>
+                    
+                    <!-- Neck -->
+                    <rect x="85" y="100" width="30" height="200" rx="4" class="hotspot" data-part="neck" fill="transparent" stroke="var(--accent)" stroke-width="2" stroke-dasharray="4 4" opacity="0.4"/>
+                    
+                    <!-- Body -->
+                    <ellipse cx="100" cy="380" rx="58" ry="73" class="hotspot" data-part="body" fill="transparent" stroke="var(--accent)" stroke-width="2" stroke-dasharray="4 4" opacity="0.4"/>
+                    
+                    <!-- Sound hole -->
+                    <ellipse cx="100" cy="380" rx="23" ry="28" class="hotspot" data-part="soundhole" fill="transparent" stroke="var(--accent)" stroke-width="2" stroke-dasharray="4 4" opacity="0.4"/>
+                    
+                    <!-- Strings area -->
+                    <rect x="90" y="25" width="20" height="415" class="hotspot" data-part="strings" fill="transparent" stroke="var(--accent)" stroke-width="2" stroke-dasharray="4 4" opacity="0.4"/>
+                </svg>
+                
+                <!-- Part labels on diagram -->
+                <div class="part-label" style="top: 8%; left: 60%;" data-part="headstock">Clavijero</div>
+                <div class="part-label" style="top: 30%; left: 65%;" data-part="neck">Mástil</div>
+                <div class="part-label" style="top: 55%; left: 65%;" data-part="fretboard">Diapasón</div>
+                <div class="part-label" style="top: 75%; left: 65%;" data-part="body">Caja</div>
+                <div class="part-label" style="top: 85%; left: 15%;" data-part="bridge">Puente</div>
+            </div>
+            
+            <div class="part-info-panel">
+                <div class="part-info active" id="info-default">
+                    <div class="part-info-icon">👆</div>
+                    <h3>Toca una parte</h3>
+                    <p>Pasa el ratón o toca cualquier zona resaltada de la guitarra para descubrir qué es y para qué sirve.</p>
+                </div>
+                <div class="part-info" id="info-headstock">
+                    <div class="part-info-icon">🎛️</div>
+                    <h3>Clavijero</h3>
+                    <p>Las <strong>clavijas</strong> que ves arriba sirven para afinar. Girar una clavija tensa o afloja su cuerda, cambiando el sonido. Más tensa = más agudo. Más floja = más grave.</p>
+                </div>
+                <div class="part-info" id="info-neck">
+                    <div class="part-info-icon">📏</div>
+                    <h3>Mástil</h3>
+                    <p>El <strong>mástil</strong> es el palo largo de la guitarra. Es donde colocas los dedos de la mano izquierda para cambiar las notas. Está hecho de madera dura para que no se doble con la tensión de las cuerdas.</p>
+                </div>
+                <div class="part-info" id="info-fretboard">
+                    <div class="part-info-icon">🔲</div>
+                    <h3>Diapasón y trastes</h3>
+                    <p>El <strong>diapasón</strong> es la parte plana del mástil. Las <strong>líneas metálicas</strong> que lo cruzan se llaman <strong>trastes</strong>. Cada traste sube la nota media tonalidad. Presionar entre dos trastes es cómo cambias de nota.</p>
+                </div>
+                <div class="part-info" id="info-body">
+                    <div class="part-info-icon">🎸</div>
+                    <h3>Caja de resonancia</h3>
+                    <p>La <strong>caja</strong> es el cuerpo de la guitarra. Amplifica el sonido de las cuerdas (como un altavoz natural). Cuanto más grande, más grave el sonido. Las guitarras clásicas tienen cuerdas de nylon; las acústicas, de acero.</p>
+                </div>
+                <div class="part-info" id="info-soundhole">
+                    <div class="part-info-icon">🌀</div>
+                    <h3>Boca (roseta)</h3>
+                    <p>El <strong>agujero</strong> en el centro de la caja deja salir el sonido. Las vibraciones de las cuerdas rebotan dentro de la caja y salen por aquí. Si tapas el agujero con la mano, el sonido se apaga.</p>
+                </div>
+                <div class="part-info" id="info-strings">
+                    <div class="part-info-icon">🎵</div>
+                    <h3>Las cuerdas</h3>
+                    <p>Hay <strong>6 cuerdas</strong>, de la más gruesa (abajo, cuerda 6) a la más fina (arriba, cuerda 1). De abajo arriba suenan: <strong>Mi, La, Re, Sol, Si, Mi</strong>. Un truco para recordarlo: <em>"El Lazy Dog Gets Big Ears"</em> (E-A-D-G-B-E).</p>
+                </div>
+                <div class="part-info" id="info-bridge">
+                    <div class="part-info-icon">🔗</div>
+                    <h3>Puente</h3>
+                    <p>El <strong>puente</strong> es donde se anclan las cuerdas en la parte inferior de la caja. Transmite las vibraciones a la caja de resonancia. En guitarras clásicas las cuerdas se atan; en acústicas, usan pasadores.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PARTE 2: POSTURA -->
+    <section class="section posture" id="postura">
+        <div class="section-header">
+            <p class="section-label">Parte 2 — Cómo sujetarla</p>
+            <h2 class="section-title">No la agarres<br>como un bate</h2>
+        </div>
+        
+        <div class="posture-tips">
+            <div class="posture-card">
+                <div class="posture-number">01</div>
+                <h3>La curva en tu pierna</h3>
+                <p>Siéntate con la espalda recta. Apoya la <strong>curva de la guitarra</strong> sobre tu pierna izquierda (si eres diestro). El mástil debe apuntar ligeramente hacia arriba, no horizontal.</p>
+            </div>
+            <div class="posture-card">
+                <div class="posture-number">02</div>
+                <h3>Mano derecha: sobre la boca</h3>
+                <p>Tu mano derecha debe caer <strong>naturalmente sobre el agujero</strong> de la guitarra. No fuerces la muñeca. Los dedos descansan sobre las cuerdas; el pulgar queda libre para tocar las cuerdas graves (las de abajo).</p>
+            </div>
+            <div class="posture-card">
+                <div class="posture-number">03</div>
+                <h3>Mano izquierda: el pulgar atrás</h3>
+                <p>El <strong>pulgar de la mano izquierda</strong> va detrás del mástil, centrado. No lo saques por encima. Los dedos curvados presionan las cuerdas desde arriba, no desde abajo.</p>
+            </div>
+            <div class="posture-card">
+                <div class="posture-number">04</div>
+                <h3>La púa (opcional al principio)</h3>
+                <p>Al principio puedes tocar con los dedos. Cuando quieras usar púa, <strong>aférrala entre el pulgar y el índice</strong>, con solo la punta asomando. No la aprietes demasiado.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PARTE 3: LAS CUERDAS -->
+    <section class="section strings-section" id="cuerdas">
+        <div class="section-header">
+            <p class="section-label">Parte 3 — Escuchar</p>
+            <h2 class="section-title">¿Cómo suena<br>cada cuerda?</h2>
+        </div>
+        
+        <p class="section-intro">Toca cada botón para escuchar cómo debería sonar una cuerda afinada. La cuerda 6 es la más gruesa (abajo), la 1 es la más fina (arriba).</p>
+        
+        <div class="strings-interactive">
+            <div class="string-row" data-string="1" data-note="E" data-freq="329.63">
+                <div class="string-visual">
+                    <div class="string-line thin"></div>
+                    <span class="string-label">1ª</span>
+                </div>
+                <div class="string-info">
+                    <span class="string-note">Mi</span>
+                    <span class="string-desc">La más fina y aguda</span>
+                </div>
+                <button class="string-play-btn">▶ Escuchar</button>
+            </div>
+            <div class="string-row" data-string="2" data-note="B" data-freq="246.94">
+                <div class="string-visual">
+                    <div class="string-line medium-thin"></div>
+                    <span class="string-label">2ª</span>
+                </div>
+                <div class="string-info">
+                    <span class="string-note">Si</span>
+                    <span class="string-desc">Segunda más fina</span>
+                </div>
+                <button class="string-play-btn">▶ Escuchar</button>
+            </div>
+            <div class="string-row" data-string="3" data-note="G" data-freq="196.00">
+                <div class="string-visual">
+                    <div class="string-line medium"></div>
+                    <span class="string-label">3ª</span>
+                </div>
+                <div class="string-info">
+                    <span class="string-note">Sol</span>
+                    <span class="string-desc">Cuerda del medio</span>
+                </div>
+                <button class="string-play-btn">▶ Escuchar</button>
+            </div>
+            <div class="string-row" data-string="4" data-note="D" data-freq="146.83">
+                <div class="string-visual">
+                    <div class="string-line medium-thick"></div>
+                    <span class="string-label">4ª</span>
+                </div>
+                <div class="string-info">
+                    <span class="string-note">Re</span>
+                    <span class="string-desc">Segunda más gruesa</span>
+                </div>
+                <button class="string-play-btn">▶ Escuchar</button>
+            </div>
+            <div class="string-row" data-string="5" data-note="A" data-freq="110.00">
+                <div class="string-visual">
+                    <div class="string-line thick"></div>
+                    <span class="string-label">5ª</span>
+                </div>
+                <div class="string-info">
+                    <span class="string-note">La</span>
+                    <span class="string-desc">Casi la más grave</span>
+                </div>
+                <button class="string-play-btn">▶ Escuchar</button>
+            </div>
+            <div class="string-row" data-string="6" data-note="E" data-freq="82.41">
+                <div class="string-visual">
+                    <div class="string-line thickest"></div>
+                    <span class="string-label">6ª</span>
+                </div>
+                <div class="string-info">
+                    <span class="string-note">Mi</span>
+                    <span class="string-desc">La más gruesa y grave</span>
+                </div>
+                <button class="string-play-btn">▶ Escuchar</button>
+            </div>
+        </div>
+        
+        <div class="mnemonic-box">
+            <p>💡 <strong>Truco para recordar el orden:</strong> de la 6ª (gruesa) a la 1ª (fina):</p>
+            <p class="mnemonic">Mi · La · Re · Sol · Si · Mi</p>
+            <p class="mnemonic-help">O en inglés: <em>E · A · D · G · B · E</em> → "Every Apple Does Go Bad Eventually"</p>
+        </div>
+    </section>
+
+    <!-- PARTE 4: ¿QUÉ ES AFINAR? -->
+    <section class="section tuning-learn" id="afinar">
+        <div class="section-header">
+            <p class="section-label">Parte 4 — Afinar</p>
+            <h2 class="section-title">¿Por qué suena<br>mal mi guitarra?</h2>
+        </div>
+        
+        <div class="explain-cards">
+            <div class="explain-card">
+                <div class="explain-visual">
+                    <div class="wave-visual loose">
+                        <div class="wave-line"></div>
+                        <div class="wave-line"></div>
+                        <div class="wave-line"></div>
+                    </div>
+                </div>
+                <h3>Cuerda floja</h3>
+                <p>Si la cuerda está <strong>muy floja</strong>, vibra lentamente y suena grave, casi como un tambor. Suena "muerto".</p>
+            </div>
+            <div class="explain-card featured">
+                <div class="explain-visual">
+                    <div class="wave-visual tuned">
+                        <div class="wave-line"></div>
+                        <div class="wave-line"></div>
+                        <div class="wave-line"></div>
+                    </div>
+                </div>
+                <h3>Cuerda afinada ✅</h3>
+                <p>La cuerda vibra a la <strong>frecuencia justa</strong>. Suena clara, limpia y musical. Cada cuerda tiene su frecuencia ideal.</p>
+            </div>
+            <div class="explain-card">
+                <div class="explain-visual">
+                    <div class="wave-visual tight">
+                        <div class="wave-line"></div>
+                        <div class="wave-line"></div>
+                        <div class="wave-line"></div>
+                    </div>
+                </div>
+                <h3>Cuerda tensa</h3>
+                <p>Si la cuerda está <strong>demasiado tensa</strong>, vibra muy rápido y suena agudo, estridente. Puede romperse si la tensas demasiado.</p>
+            </div>
+        </div>
+        
+        <div class="tuning-demo">
+            <p class="demo-instruction">👇 Prueba tú mismo: arrastra el punto de la cuerda para afinarla. Cuando esté en el centro, estará afinada.</p>
+            <div class="tuning-slider-wrapper">
+                <div class="tuning-string-display">
+                    <span class="tuning-string-label">6ª cuerda — Mi (E)</span>
+                    <span class="tuning-status">Muy floja</span>
+                </div>
+                <div class="tuning-slider-track">
+                    <div class="tuning-slider-zone tuned-zone"></div>
+                    <div class="tuning-slider-handle" style="left: 10%;"></div>
+                </div>
+                <div class="tuning-slider-labels">
+                    <span>Demasiado floja</span>
+                    <span class="center">✅ Afinada</span>
+                    <span>Demasiado tensa</span>
+                </div>
+                <button class="tuning-play-demo">▶ Escuchar esta nota</button>
+            </div>
+        </div>
+        
+        <div class="section-header" style="margin-top: 6rem;">
+            <p class="section-label">Herramienta</p>
+            <h2 class="section-title">Afinador<br>interactivo</h2>
+        </div>
+        
+        <div class="tools-grid single">
             <div class="tool-card" data-tool="tuner">
                 <div class="tool-visual">
                     <div class="tuner-display">
@@ -93,19 +387,64 @@
                         <div class="tuner-string">6ª Cuerda</div>
                     </div>
                     <button class="tool-btn" id="tuner-toggle">Activar Afinador</button>
+                    <p class="tool-hint">Pulsa y toca una cuerda cerca del micrófono. La aguja te dirá si está afinada.</p>
                 </div>
                 <div class="tool-info">
-                    <h3>Afinador</h3>
-                    <p>Afina tu guitarra con precisión. Soporte para afinación estándar EADGBE.</p>
+                    <h3>Afinador cromático</h3>
+                    <p>Detecta automáticamente qué cuerda estás tocando y te dice si está demasiado grave, demasiado aguda o justa. La aguja verde = afinada.</p>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <!-- Metronome -->
+    <!-- PARTE 5: ¿QUÉ ES EL RITMO? -->
+    <section class="section rhythm-learn" id="ritmo">
+        <div class="section-header">
+            <p class="section-label">Parte 5 — Ritmo</p>
+            <h2 class="section-title">¿Qué es el<br>ritmo exactamente?</h2>
+        </div>
+        
+        <div class="rhythm-explain">
+            <div class="rhythm-visual">
+                <div class="beat-grid">
+                    <div class="beat-dot active" data-beat="1"><span>1</span></div>
+                    <div class="beat-dot" data-beat="2"><span>2</span></div>
+                    <div class="beat-dot" data-beat="3"><span>3</span></div>
+                    <div class="beat-dot" data-beat="4"><span>4</span></div>
+                </div>
+                <p class="rhythm-caption">Pulso de 4 tiempos: el latido de la música</p>
+            </div>
+            <div class="rhythm-text">
+                <p>El <strong>ritmo</strong> es simplemente <em>"cuándo tocas"</em>. Imagina que caminas: izquierda, derecha, izquierda, derecha... Eso es un pulso. En música, contamos en grupos de 4: <strong>1, 2, 3, 4</strong>.</p>
+                <p>El <strong>metrónomo</strong> es como un reloj que te marca esos tiempos para que no vayas ni demasiado rápido ni demasiado lento. Al principio parece difícil, pero después de una semana se vuelve natural.</p>
+            </div>
+        </div>
+        
+        <div class="rhythm-exercise">
+            <h3>🎯 Ejercicio: siente el pulso</h3>
+            <p>Presiona el botón y golpea suavemente tu muslo (o la mesa) con cada número que parpadee. Intenta que todos los golpes suenen iguales de fuertes.</p>
+            <div class="rhythm-buttons">
+                <button class="rhythm-btn" data-tempo="slow">Lento (40 BPM)</button>
+                <button class="rhythm-btn active" data-tempo="medium">Normal (60 BPM)</button>
+                <button class="rhythm-btn" data-tempo="fast">Rápido (90 BPM)</button>
+            </div>
+            <div class="beat-display" id="rhythm-beat-display">
+                <div class="beat-number">1</div>
+                <div class="beat-bar"><div class="beat-progress"></div></div>
+            </div>
+        </div>
+        
+        <div class="section-header" style="margin-top: 6rem;">
+            <p class="section-label">Herramienta</p>
+            <h2 class="section-title">Metrónomo</h2>
+        </div>
+        
+        <div class="tools-grid single">
             <div class="tool-card" data-tool="metronome">
                 <div class="tool-visual">
                     <div class="metronome-display">
                         <div class="metronome-bpm">60</div>
-                        <div class="metronome-label">BPM</div>
+                        <div class="metronome-label">BPM — golpes por minuto</div>
                         <div class="metronome-beat"></div>
                     </div>
                     <div class="metronome-controls">
@@ -113,211 +452,136 @@
                         <button class="tool-btn" id="metro-toggle">Iniciar</button>
                         <button class="tool-btn secondary" id="metro-plus">+</button>
                     </div>
+                    <p class="tool-hint">Empieza lento (60 BPM). Toca una cuerda con cada "tic".</p>
                 </div>
                 <div class="tool-info">
                     <h3>Metrónomo</h3>
-                    <p>Desarrolla tu sentido del ritmo. Controla el tempo desde 40 hasta 208 BPM.</p>
+                    <p>Desarrolla tu sentido del ritmo. Un BPM (beat por minuto) es un golpe por minuto. 60 BPM = 1 golpe por segundo. Practica a 60 BPM durante una semana antes de subir.</p>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <!-- Chord Library -->
+    <!-- PARTE 6: ¿QUÉ SON LOS ACORDES? -->
+    <section class="section chords-learn" id="acordes">
+        <div class="section-header">
+            <p class="section-label">Parte 6 — Acordes</p>
+            <h2 class="section-title">¿Por qué presionamos<br>las cuerdas?</h2>
+        </div>
+        
+        <div class="chords-explain">
+            <div class="chord-mechanic">
+                <div class="mechanic-step">
+                    <div class="mechanic-number">1</div>
+                    <div class="mechanic-content">
+                        <h3>Cuerda al aire</h3>
+                        <p>Si tocas una cuerda <strong>sin presionar nada</strong>, suena la nota "al aire". Por ejemplo, la cuerda 6 (la más gruesa) suena Mi grave.</p>
+                    </div>
+                </div>
+                <div class="mechanic-arrow">↓</div>
+                <div class="mechanic-step">
+                    <div class="mechanic-number">2</div>
+                    <div class="mechanic-content">
+                        <h3>Presionando un traste</h3>
+                        <p>Cuando <strong>presionas una cuerda contra un traste</strong>, acortas la parte que vibra. Eso sube el sonido. Primer traste = media nota más aguda. Segundo traste = una nota más aguda...</p>
+                    </div>
+                </div>
+                <div class="mechanic-arrow">↓</div>
+                <div class="mechanic-step">
+                    <div class="mechanic-number">3</div>
+                    <div class="mechanic-content">
+                        <h3>Varias cuerdas a la vez = acorde</h3>
+                        <p>Un <strong>acorde</strong> es simplemente tocar <strong>varias cuerdas a la vez</strong> con los dedos en posiciones específicas. Es como un "equipo" de notas que suena bien junto.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="fretboard-demo">
+            <h3>🎸 Prueba en tu guitarra</h3>
+            <p>Toca la cuerda 6 (la más gruesa) sin presionar nada. Ahora presiónala en el 1er traste con el índice y toca. ¿Suena más aguda? Eso es porque acortaste la cuerda.</p>
+            <div class="fretboard-mini">
+                <div class="fretboard-string">
+                    <span class="fret-open active" data-fret="0">○</span>
+                    <span class="fret" data-fret="1">1</span>
+                    <span class="fret" data-fret="2">2</span>
+                    <span class="fret" data-fret="3">3</span>
+                </div>
+                <p class="fretboard-hint">Toca la cuerda 6. Presiona diferentes trastes.</p>
+            </div>
+        </div>
+        
+        <div class="section-header" style="margin-top: 6rem;">
+            <p class="section-label">Herramienta</p>
+            <h2 class="section-title">Los cinco acordes<br>esenciales</h2>
+        </div>
+        
+        <p class="section-intro">Estos cinco acordes te permiten tocar <strong>miles de canciones</strong>. Empieza por Em (Mi menor): solo necesitas 2 dedos.</p>
+        
+        <div class="tools-grid single">
             <div class="tool-card wide" data-tool="chords">
                 <div class="tool-visual chord-visual">
                     <div class="chord-selector">
+                        <button class="chord-tab" data-chord="Em">Em</button>
                         <button class="chord-tab active" data-chord="C">C</button>
                         <button class="chord-tab" data-chord="G">G</button>
-                        <button class="chord-tab" data-chord="D">D</button>
-                        <button class="chord-tab" data-chord="Em">Em</button>
                         <button class="chord-tab" data-chord="Am">Am</button>
+                        <button class="chord-tab" data-chord="D">D</button>
                     </div>
                     <div class="chord-diagram" id="chord-diagram">
                         <!-- SVG chord diagram generated by JS -->
                     </div>
                 </div>
+                <div class="chord-instruction" id="chord-instruction">
+                    <h4>Do Mayor (C)</h4>
+                    <p>Índice en 1er traste de la 2ª cuerda · Medio en 2º traste de la 4ª · Anular en 3er traste de la 5ª</p>
+                </div>
                 <div class="tool-info">
                     <h3>Biblioteca de Acordes</h3>
-                    <p>Los cinco acordes esenciales para empezar. Visualiza posiciones y digitaciones.</p>
+                    <p>Los círculos dorados son donde poner los dedos. El número dentro es el dedo: 1 = índice, 2 = medio, 3 = anular, 4 = meñique. La X significa "no toques esta cuerda". El ○ significa "tócala al aire".</p>
                 </div>
+            </div>
+        </div>
+        
+        <div class="chords-showcase">
+            <div class="chord-card" data-chord="Em">
+                <div class="chord-name">Em</div>
+                <div class="chord-type">Mi Menor — El más fácil</div>
+                <svg class="chord-svg" viewBox="0 0 100 120"></svg>
+                <div class="chord-detail">Solo 2 dedos. El primero que deberías aprender.</div>
+            </div>
+            <div class="chord-card" data-chord="Am">
+                <div class="chord-name">Am</div>
+                <div class="chord-type">La Menor — El siguiente</div>
+                <svg class="chord-svg" viewBox="0 0 100 120"></svg>
+                <div class="chord-detail">3 dedos. Similar posición a Em.</div>
+            </div>
+            <div class="chord-card" data-chord="C">
+                <div class="chord-name">C</div>
+                <div class="chord-type">Do Mayor — El más popular</div>
+                <svg class="chord-svg" viewBox="0 0 100 120"></svg>
+                <div class="chord-detail">3 dedos. Suena alegre y resolutivo.</div>
+            </div>
+            <div class="chord-card" data-chord="G">
+                <div class="chord-name">G</div>
+                <div class="chord-type">Sol Mayor — El compañero de C</div>
+                <svg class="chord-svg" viewBox="0 0 100 120"></svg>
+                <div class="chord-detail">3 dedos. Con C y G ya puedes tocar canciones.</div>
+            </div>
+            <div class="chord-card" data-chord="D">
+                <div class="chord-name">D</div>
+                <div class="chord-type">Re Mayor — El más brillante</div>
+                <svg class="chord-svg" viewBox="0 0 100 120"></svg>
+                <div class="chord-detail">3 dedos en las 3 cuerdas de abajo.</div>
             </div>
         </div>
     </section>
 
-    <!-- Recursos Recomendados Section -->
-    <section class="section resources" id="recursos">
-        <div class="section-header">
-            <p class="section-label">Recursos seleccionados</p>
-            <h2 class="section-title">Solo necesitas<br>esto para empezar</h2>
-        </div>
-        
-        <p class="resources-intro">No abras 50 pestañas. Internet ya tiene casi todo; lo que falta es alguien que diga: <em>"Hoy solo toca hacer esto"</em>.</p>
-        
-        <div class="resources-grid">
-            <!-- Cursos -->
-            <div class="resource-card">
-                <div class="resource-icon">🎓</div>
-                <div class="resource-content">
-                    <span class="resource-tag">Curso</span>
-                    <h3>Justin Guitar</h3>
-                    <p>El mejor curso gratuito para empezar desde cero. Itinerario estructurado, ejercicios y seguimiento de progreso. El recurso que más recomienda la comunidad de guitarristas.</p>
-                    <a href="https://www.justinguitar.com" target="_blank" rel="noopener" class="resource-link">
-                        Visitar justinguitar.com
-                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </a>
-                </div>
-            </div>
-            
-            <!-- Afinador -->
-            <div class="resource-card">
-                <div class="resource-icon">🎵</div>
-                <div class="resource-content">
-                    <span class="resource-tag">Afinador</span>
-                    <h3>Fender Tune / GuitarTuna</h3>
-                    <p>Afinadores precisos y fáciles de usar. Fender Tune es limpio y sin anuncios; GuitarTuna es el más popular con modos para ukelele y bajo incluidos.</p>
-                    <div class="resource-links">
-                        <a href="https://www.fender.com/tune" target="_blank" rel="noopener" class="resource-link">
-                            Fender Tune
-                            <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Metrónomo -->
-            <div class="resource-card">
-                <div class="resource-icon">⏱️</div>
-                <div class="resource-content">
-                    <span class="resource-tag">Metrónomo</span>
-                    <h3>Soundbrenner</h3>
-                    <p>El metrónomo más usado por músicos profesionales. Practicar con metrónomo desde el principio mejora drásticamente el sentido del ritmo.</p>
-                    <a href="https://www.soundbrenner.com" target="_blank" rel="noopener" class="resource-link">
-                        Visitar soundbrenner.com
-                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </a>
-                </div>
-            </div>
-            
-            <!-- Tablaturas -->
-            <div class="resource-card">
-                <div class="resource-icon">🎼</div>
-                <div class="resource-content">
-                    <span class="resource-tag">Tablaturas</span>
-                    <h3>Songsterr / Ultimate Guitar</h3>
-                    <p>Los dos estándares para aprender canciones. Songsterr reproduce las tablaturas con audio; Ultimate Guitar tiene la mayor base de datos del mundo.</p>
-                    <div class="resource-links">
-                        <a href="https://www.songsterr.com" target="_blank" rel="noopener" class="resource-link">
-                            Songsterr
-                            <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        </a>
-                        <span class="resource-divider">·</span>
-                        <a href="https://www.ultimate-guitar.com" target="_blank" rel="noopener" class="resource-link">
-                            Ultimate Guitar
-                            <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- YouTube -->
-            <div class="resource-card">
-                <div class="resource-icon">📺</div>
-                <div class="resource-content">
-                    <span class="resource-tag">Vídeos</span>
-                    <h3>Canales de YouTube</h3>
-                    <p>JustinGuitar para lo estructurado, Marty Music para canciones populares, GuitarZero2Hero para técnicas, Andy Guitar para principiantes, y Paul Davids cuando ya tengas nivel.</p>
-                    <a href="https://www.youtube.com/@justinguitar" target="_blank" rel="noopener" class="resource-link">
-                        JustinGuitar en YouTube
-                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </a>
-                </div>
-            </div>
-            
-            <!-- Teoría -->
-            <div class="resource-card">
-                <div class="resource-icon">📖</div>
-                <div class="resource-content">
-                    <span class="resource-tag">Teoría</span>
-                    <h3>musictheory.net</h3>
-                    <p>La mejor explicación visual de intervalos, escalas, construcción de acordes y lectura musical. Gratuito, sin registro, con ejercicios interactivos.</p>
-                    <a href="https://www.musictheory.net" target="_blank" rel="noopener" class="resource-link">
-                        Visitar musictheory.net
-                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </a>
-                </div>
-            </div>
-            
-            <!-- Entrenamiento auditivo -->
-            <div class="resource-card">
-                <div class="resource-icon">🎧</div>
-                <div class="resource-content">
-                    <span class="resource-tag">Oído</span>
-                    <h3>ToneGym / Functional Ear Trainer</h3>
-                    <p>Entrena tu oído musical con ejercicios gamificados. Reconoce intervalos, acordes y progresiones. El oído es la herramienta más valiosa de un músico.</p>
-                    <div class="resource-links">
-                        <a href="https://www.tonegym.co" target="_blank" rel="noopener" class="resource-link">
-                            ToneGym
-                            <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- GuitarApp -->
-            <div class="resource-card">
-                <div class="resource-icon">🎸</div>
-                <div class="resource-content">
-                    <span class="resource-tag">App todo-en-uno</span>
-                    <h3>GuitarApp</h3>
-                    <p>Afinador, metrónomo, biblioteca interactiva de acordes y lecciones en una sola app. Perfecta para tener todo en el bolsillo.</p>
-                    <a href="https://guitarapp.com" target="_blank" rel="noopener" class="resource-link">
-                        Visitar guitarapp.com
-                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </a>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Quick Start Path -->
-        <div class="quick-start">
-            <h3>¿Acabas de comprar tu guitarra?</h3>
-            <div class="quick-start-steps">
-                <div class="quick-step">
-                    <span class="quick-step-num">1</span>
-                    <p>Afina la guitarra</p>
-                    <span class="quick-step-hint">Usa el afinador de arriba o Fender Tune</span>
-                </div>
-                <div class="quick-step-arrow">→</div>
-                <div class="quick-step">
-                    <span class="quick-step-num">2</span>
-                    <p>Aprende estos 4 acordes</p>
-                    <span class="quick-step-hint">Em → Am → C → G</span>
-                </div>
-                <div class="quick-step-arrow">→</div>
-                <div class="quick-step">
-                    <span class="quick-step-num">3</span>
-                    <p>Practica 5 minutos</p>
-                    <span class="quick-step-hint">Cambios lentos, sin prisa</span>
-                </div>
-                <div class="quick-step-arrow">→</div>
-                <div class="quick-step">
-                    <span class="quick-step-num">4</span>
-                    <p>Toca tu primera canción</p>
-                    <span class="quick-step-hint">Busca en Songsterr: "Knockin' on Heaven's Door"</span>
-                </div>
-                <div class="quick-step-arrow">→</div>
-                <div class="quick-step">
-                    <span class="quick-step-num">5</span>
-                    <p>Vuelve mañana</p>
-                    <span class="quick-step-hint">La constancia vence al talento</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Guía Section -->
+    <!-- PARTE 7: PRIMEROS PASOS (timeline simplificado) -->
     <section class="section guide" id="guia">
         <div class="section-header">
-            <p class="section-label">Primeros pasos</p>
-            <h2 class="section-title">El camino de<br>30 días</h2>
+            <p class="section-label">Tu plan</p>
+            <h2 class="section-title">Qué hacer<br>cada semana</h2>
         </div>
         
         <div class="timeline">
@@ -326,122 +590,180 @@
             <div class="timeline-item">
                 <div class="timeline-dot">1</div>
                 <div class="timeline-content">
-                    <span class="timeline-week">Semana 1</span>
-                    <h3>Conocer la guitarra</h3>
-                    <p>Partes de la guitarra, cómo sujetarla correctamente, nombres de las cuerdas y primer ejercicio de coordinación.</p>
+                    <span class="timeline-week">Semana 1 — Conocer</span>
+                    <h3>Aprende las partes de la guitarra</h3>
+                    <p>Identifica clavijero, mástil, trastes y cuerdas. Practica la postura correcta. Toca cada cuerda al aire para escuchar su sonido. <strong>No intentes acordes todavía.</strong></p>
                 </div>
             </div>
             
             <div class="timeline-item">
                 <div class="timeline-dot">2</div>
                 <div class="timeline-content">
-                    <span class="timeline-week">Semana 2</span>
-                    <h3>Primeros acordes</h3>
-                    <p>Em, Am, C, G, D. Aprende a leer diagramas y evita el sonido apagado.</p>
+                    <span class="timeline-week">Semana 2 — Afinar</span>
+                    <h3>Afina tu guitarra y aprende Em</h3>
+                    <p>Usa el afinador para dejar tu guitarra lista. Aprende tu primer acorde: <strong>Em (Mi menor)</strong>. Solo 2 dedos. Practica ponerlo y quitarlo 20 veves. Haz que suene limpio, sin zumbidos.</p>
                 </div>
             </div>
             
             <div class="timeline-item">
                 <div class="timeline-dot">3</div>
                 <div class="timeline-content">
-                    <span class="timeline-week">Semana 3</span>
-                    <h3>Ritmo y púa</h3>
-                    <p>Cómo usar la púa, rasgueos básicos, ritmo de 4 tiempos y uso del metrónomo.</p>
+                    <span class="timeline-week">Semana 3 — Ritmo</span>
+                    <h3>Rasgueo básico con el metrónomo</h3>
+                    <p>Aprende a hacer sonar todas las cuerdas de un acorde de golpe (rasgueo hacia abajo). Usa el metrónomo a 60 BPM. Empieza con Em. Cuando suene limpio, añade Am.</p>
                 </div>
             </div>
             
             <div class="timeline-item">
                 <div class="timeline-dot">4</div>
                 <div class="timeline-content">
-                    <span class="timeline-week">Semana 4</span>
-                    <h3>Tus primeras canciones</h3>
-                    <p>Canciones con 2-3 acordes, cambios fluidos, y tu primera grabación.</p>
+                    <span class="timeline-week">Semana 4 — Cambios</span>
+                    <h3>Cambia entre Em → Am → C</h3>
+                    <p>El reto real: pasar de un acorde a otro sin pausa. No importa si tarda 5 segundos. Lo importante es <strong>no parar</strong>. Practica Em → Am → C en bucle con el metrónomo.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-dot">5</div>
+                <div class="timeline-content">
+                    <span class="timeline-week">Semana 5 — Canción</span>
+                    <h3>Tu primera canción</h3>
+                    <p>Con Em, Am, C y G ya puedes tocar cientos de canciones. Busca en Songsterr: <strong>"Knockin' on Heaven's Door"</strong> (Bob Dylan) o <strong>"Wonderwall"</strong> (Oasis). ¡No tiene que ser perfecto!</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Acordes Section -->
-    <section class="section chords-section" id="acordes">
+    <!-- PARTE 8: RECURSOS -->
+    <section class="section resources" id="recursos">
         <div class="section-header">
-            <p class="section-label">Fundamentos</p>
-            <h2 class="section-title">Los cinco acordes<br>que lo cambian todo</h2>
+            <p class="section-label">Cuando quieras más</p>
+            <h2 class="section-title">Recursos de<br>confianza</h2>
         </div>
         
-        <div class="chords-showcase">
-            <div class="chord-card" data-chord="C">
-                <div class="chord-name">C</div>
-                <div class="chord-type">Mayor</div>
-                <svg class="chord-svg" viewBox="0 0 100 120"></svg>
-                <div class="chord-detail">Do Mayor — El acorde más utilizado en música popular.</div>
+        <p class="resources-intro">Estos son los recursos que la comunidad de guitarristas recomienda una y otra vez. Todos gratuitos.</p>
+        
+        <div class="resources-grid">
+            <div class="resource-card">
+                <div class="resource-icon">🎓</div>
+                <div class="resource-content">
+                    <span class="resource-tag">Curso gratuito</span>
+                    <h3>Justin Guitar</h3>
+                    <p>Probablemente el mejor curso gratuito del mundo. Empieza literalmente desde "cómo coger la guitarra". Cientos de lecciones ordenadas paso a paso.</p>
+                    <a href="https://www.justinguitar.com" target="_blank" rel="noopener" class="resource-link">
+                        justinguitar.com
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </a>
+                </div>
             </div>
-            <div class="chord-card" data-chord="G">
-                <div class="chord-name">G</div>
-                <div class="chord-type">Mayor</div>
-                <svg class="chord-svg" viewBox="0 0 100 120"></svg>
-                <div class="chord-detail">Sol Mayor — El compañero natural de C en miles de canciones.</div>
+            
+            <div class="resource-card">
+                <div class="resource-icon">🎵</div>
+                <div class="resource-content">
+                    <span class="resource-tag">Afinador app</span>
+                    <h3>Fender Tune</h3>
+                    <p>App gratuita, sin anuncios, muy precisa. También tiene lecciones básicas incluidas. Disponible para iOS y Android.</p>
+                    <a href="https://www.fender.com/tune" target="_blank" rel="noopener" class="resource-link">
+                        fender.com/tune
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </a>
+                </div>
             </div>
-            <div class="chord-card" data-chord="D">
-                <div class="chord-name">D</div>
-                <div class="chord-type">Mayor</div>
-                <svg class="chord-svg" viewBox="0 0 100 120"></svg>
-                <div class="chord-detail">Re Mayor — Brillante y resolutivo.</div>
+            
+            <div class="resource-card">
+                <div class="resource-icon">🎼</div>
+                <div class="resource-content">
+                    <span class="resource-tag">Tablaturas</span>
+                    <h3>Songsterr</h3>
+                    <p>Millones de canciones con tablatura y audio. Puedes ralentizar el tempo y hacer loop en secciones difíciles. Perfecto para practicar tu primera canción.</p>
+                    <a href="https://www.songsterr.com" target="_blank" rel="noopener" class="resource-link">
+                        songsterr.com
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </a>
+                </div>
             </div>
-            <div class="chord-card" data-chord="Em">
-                <div class="chord-name">Em</div>
-                <div class="chord-type">Menor</div>
-                <svg class="chord-svg" viewBox="0 0 100 120"></svg>
-                <div class="chord-detail">Mi Menor — Melancólico y versátil, solo dos dedos.</div>
+            
+            <div class="resource-card">
+                <div class="resource-icon">📺</div>
+                <div class="resource-content">
+                    <span class="resource-tag">YouTube</span>
+                    <h3>JustinGuitar (canal)</h3>
+                    <p>Miles de vídeos gratuitos. Empieza por la lista "Beginner Course". Explica con paciencia, sin prisa, sin tecnicismos innecesarios.</p>
+                    <a href="https://www.youtube.com/@justinguitar" target="_blank" rel="noopener" class="resource-link">
+                        youtube.com/@justinguitar
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </a>
+                </div>
             </div>
-            <div class="chord-card" data-chord="Am">
-                <div class="chord-name">Am</div>
-                <div class="chord-type">Menor</div>
-                <svg class="chord-svg" viewBox="0 0 100 120"></svg>
-                <div class="chord-detail">La Menor — El primer menor que aprenden la mayoría.</div>
+            
+            <div class="resource-card">
+                <div class="resource-icon">📖</div>
+                <div class="resource-content">
+                    <span class="resource-tag">Teoría visual</span>
+                    <h3>musictheory.net</h3>
+                    <p>Explica intervalos, escalas y lectura musical con animaciones interactivas. Muy útil cuando quieras entender <em>por qué</em> los acordes funcionan.</p>
+                    <a href="https://www.musictheory.net" target="_blank" rel="noopener" class="resource-link">
+                        musictheory.net
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="resource-card">
+                <div class="resource-icon">⏱️</div>
+                <div class="resource-content">
+                    <span class="resource-tag">Metrónomo</span>
+                    <h3>Soundbrenner</h3>
+                    <p>Metrónomo profesional gratis. Permite programar ritmos complejos y guardar tus tempos favoritos. Usado por músicos de concierto.</p>
+                    <a href="https://www.soundbrenner.com" target="_blank" rel="noopener" class="resource-link">
+                        soundbrenner.com
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Rutinas Section -->
+    <!-- PARTE 9: RUTINAS -->
     <section class="section routines" id="rutinas">
         <div class="section-header">
-            <p class="section-label">Práctica</p>
-            <h2 class="section-title">Rutinas para<br>cada momento</h2>
+            <p class="section-label">Práctica diaria</p>
+            <h2 class="section-title">Cuánto tiempo<br>tienes hoy?</h2>
         </div>
         
         <div class="routines-grid">
             <div class="routine-card">
                 <div class="routine-time">5<span>min</span></div>
-                <h3>Rutina Express</h3>
+                <h3>Express</h3>
                 <ul>
-                    <li>Afinar la guitarra <span>30s</span></li>
-                    <li>Cambio Em → Am <span>2min</span></li>
-                    <li>Rasgueo básico <span>2min</span></li>
-                    <li>Revisar postura <span>30s</span></li>
+                    <li>Afinar <span>30s</span></li>
+                    <li>Escucha cada cuerda al aire <span>1min</span></li>
+                    <li>Em → Am, 10 veces <span>2min</span></li>
+                    <li>Rasgueo hacia abajo con metrónomo <span>1.5min</span></li>
                 </ul>
             </div>
             
             <div class="routine-card featured">
                 <div class="routine-time">10<span>min</span></div>
-                <h3>Rutina Diaria</h3>
+                <h3>Diaria</h3>
                 <ul>
                     <li>Afinar <span>1min</span></li>
-                    <li>Ejercicio de dedos <span>2min</span></li>
-                    <li>Acorde del día <span>3min</span></li>
-                    <li>Cambios de acordes <span>3min</span></li>
-                    <li>Rasgueo con metrónomo <span>1min</span></li>
+                    <li>Acorde del día: poner/quitar 15 veces <span>3min</span></li>
+                    <li>Cambio de acordes lento y limpio <span>3min</span></li>
+                    <li>Rasgueo con metrónomo a 60 BPM <span>2min</span></li>
+                    <li>Toca una canción que conozcas <span>1min</span></li>
                 </ul>
             </div>
             
             <div class="routine-card">
                 <div class="routine-time">20<span>min</span></div>
-                <h3>Rutina Completa</h3>
+                <h3>Completa</h3>
                 <ul>
-                    <li>Calentamiento <span>3min</span></li>
+                    <li>Afinar y revisar postura <span>2min</span></li>
                     <li>Revisar acordes aprendidos <span>5min</span></li>
                     <li>Nuevo acorde o técnica <span>5min</span></li>
-                    <li>Practicar canción <span>5min</span></li>
-                    <li>Libre / improvisar <span>2min</span></li>
+                    <li>Practicar canción con metrónomo <span>5min</span></li>
+                    <li>Toca lo que quieras, sin presión <span>3min</span></li>
                 </ul>
             </div>
         </div>
@@ -458,7 +780,7 @@
                 </svg>
                 <span>Resonancia</span>
             </div>
-            <p class="footer-text">Hecho para un amigo que se compró una guitarra y no tenía ni idea. Espero que ahora tenga menos.</p>
+            <p class="footer-text">Hecho para un amigo que se compró una guitarra y no tenía ni idea. Empezamos desde cero, sin prisa.</p>
         </div>
     </footer>
 

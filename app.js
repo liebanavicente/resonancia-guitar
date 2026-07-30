@@ -722,6 +722,262 @@ const initTuner = () => {
     });
 };
 
+/* ===== PROGRESS SECTION ===== */
+const weekTasks = {
+    1: { title: "Conocer tu guitarra", days: {
+        1: ["Toca cada cuerda al aire y escucha", "Identifica las partes de la guitarra", "Practica la postura correcta (5 min)"],
+        2: ["Repite los nombres de las 6 cuerdas", "Afina la guitarra con el afinador", "Toca las cuerdas en orden: 6→1→6→1"],
+        3: ["Revisa la postura con el espejo", "Escucha cada cuerda con el botón de arriba", "Practica poner los dedos sin presionar"],
+        4: ["Afina la guitarra sin mirar el afinador", "Toca una cuerda y di su nombre en voz alta", "5 min de exploración libre"],
+        5: ["Revisa: ¿recuerdas todos los nombres?", "Practica el ritmo golpeando la mesa", "Toca cada cuerda 10 veces limpio"],
+        6: ["Practica con la púa (si tienes) o dedos", "Afina de nuevo", "Explora: ¿qué sonidos puedes hacer?"],
+        7: ["Revisa todo lo de la semana", "Toca una melodía simple (ej: Smoke on the Water, cuerda 6)", "Descansa 🎉"]
+    }},
+    2: { title: "Afinar y primer acorde", days: {
+        1: ["Afina la guitarra", "Aprende Em (2 dedos)", "Practica poner/quitar Em 20 veces"],
+        2: ["Afina + Em", "Asegúrate de que todas las cuerdas suenan", "Cambia entre Em y 'aire'"],
+        3: ["Afina + Em", "Añade Am (3 dedos)", "Cambia Em → Am (lento)"],
+        4: ["Afina + Em + Am", "Practica el cambio 10 veces", "Rasgueo hacia abajo en Em"],
+        5: ["Afina + Em + Am", "Rasgueo en Am", "Cambia Em → Am → Em"],
+        6: ["Revisa ambos acordes", "Practica sin mirar los dedos", "Toca una canción simple (2 acordes)"],
+        7: ["Revisa la semana", "Toca tu progresión favorita", "Descansa 🎉"]
+    }},
+    3: { title: "Ritmo y rasgueo", days: {
+        1: ["Afina + Em + Am", "Rasgueo hacia abajo con metrónomo (60 BPM)", "5 min de cambios de acordes"],
+        2: ["Afina + Em + Am + C", "Aprende C (3 dedos)", "Cambia Em → C"],
+        3: ["Afina + Em + Am + C", "Rasgueo en C con metrónomo", "Cambia entre los 3 acordes"],
+        4: ["Afina + los 3 acordes", "Añade G (3 dedos)", "Cambia C → G"],
+        5: ["Afina + los 4 acordes", "Rasgueo en G", "Cambia entre los 4 (lento)"],
+        6: ["Practica los 4 acordes en bucle", "Usa el metrónomo", "Toca una canción con 2 acordes"],
+        7: ["Revisa la semana", "Toca tu progresión favorita", "Descansa 🎉"]
+    }},
+    4: { title: "Cambios fluidos", days: {
+        1: ["Afina + los 4 acordes", "Cambia Em → Am → C → G (lento)", "Metrónomo 60 BPM"],
+        2: ["Mismo ejercicio, un poco más rápido", "Focaliza en el acorde más difícil", "10 min de cambios"],
+        3: ["Afina + los 4 acordes", "Añade D (3 dedos)", "Practica G → D"],
+        4: ["Los 5 acordes en bucle", "Cambia cada 4 tiempos", "Metrónomo 65 BPM"],
+        5: ["Practica la progresión Em-C-G-D", "Rasgueo hacia abajo", "Toca una canción de 3 acordes"],
+        6: ["Revisa todos los acordes", "Cambia sin mirar (intenta)", "Toca con la púa"],
+        7: ["Revisa la semana", "Toca tu canción favorita", "Descansa 🎉"]
+    }},
+    5: { title: "Tu primera canción", days: {
+        1: ["Afina + 5 acordes", "Busca una canción en Songsterr", "Aprende los acordes de la canción"],
+        2: ["Practica los acordes de la canción", "Rasgueo simple (abajo solamente)", "5 min con metrónomo"],
+        3: ["Toca la canción completa (lento)", "No importa si te equivocas", "Corregir la parte más difícil"],
+        4: ["Toca la canción 3 veces seguidas", "Canta mientras tocas (si quieres)", "Grábate y escúchate"],
+        5: ["Toca un poco más rápido", "Añade un rasgueo hacia arriba", "Practica la parte más difícil 10 veces"],
+        6: ["Toca la canción completa", "Toca para alguien (amigo, familia)", "Celebra tu progreso"],
+        7: ["Revisa todo lo aprendido", "Toca tu canción favorita", "¡Felicidades! Has completado 5 semanas 🎉"]
+    }}
+};
+
+const dayNames = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"];
+
+const initProgress = () => {
+    const STORAGE_KEY = 'resonancia-progress';
+    const daysGrid = document.getElementById('days-grid');
+    const weekTitle = document.getElementById('progress-week-title');
+    const weekFill = document.getElementById('progress-week-fill');
+    const weekPercent = document.getElementById('progress-week-percent');
+    const celebration = document.getElementById('progress-celebration');
+    const statStreak = document.getElementById('stat-streak');
+    const statTasks = document.getElementById('stat-tasks');
+    const statWeeks = document.getElementById('stat-weeks');
+    const resetBtn = document.getElementById('progress-reset');
+    
+    if (!daysGrid) return;
+    
+    let progress = {};
+    try {
+        progress = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
+    } catch (e) {
+        progress = {};
+    }
+    
+    let currentWeek = 1;
+    
+    const save = () => {
+        try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
+        } catch (e) {
+            // localStorage not available
+        }
+    };
+    
+    const getTaskKey = (week, day, taskIndex) => `w${week}d${day}t${taskIndex}`;
+    
+    const isTaskDone = (week, day, taskIndex) => {
+        return progress[getTaskKey(week, day, taskIndex)] === true;
+    };
+    
+    const setTaskDone = (week, day, taskIndex, done) => {
+        progress[getTaskKey(week, day, taskIndex)] = done;
+        save();
+    };
+    
+    const getDayProgress = (week, day) => {
+        const tasks = weekTasks[week].days[day];
+        let done = 0;
+        tasks.forEach((_, i) => {
+            if (isTaskDone(week, day, i)) done++;
+        });
+        return { done, total: tasks.length };
+    };
+    
+    const getWeekProgress = (week) => {
+        let done = 0, total = 0;
+        for (let d = 1; d <= 7; d++) {
+            const dp = getDayProgress(week, d);
+            done += dp.done;
+            total += dp.total;
+        }
+        return { done, total, percent: total > 0 ? Math.round((done / total) * 100) : 0 };
+    };
+    
+    const getStreak = () => {
+        let streak = 0;
+        for (let w = 1; w <= 5; w++) {
+            for (let d = 1; d <= 7; d++) {
+                const dp = getDayProgress(w, d);
+                if (dp.done > 0) streak++;
+                else if (streak > 0) return streak;
+            }
+        }
+        return streak;
+    };
+    
+    const getTotalTasks = () => {
+        let done = 0;
+        for (let w = 1; w <= 5; w++) {
+            for (let d = 1; d <= 7; d++) {
+                const dp = getDayProgress(w, d);
+                done += dp.done;
+            }
+        }
+        return done;
+    };
+    
+    const getCompletedWeeks = () => {
+        let count = 0;
+        for (let w = 1; w <= 5; w++) {
+            const wp = getWeekProgress(w);
+            if (wp.percent === 100) count++;
+        }
+        return count;
+    };
+    
+    const renderWeek = (weekNum) => {
+        currentWeek = weekNum;
+        const weekData = weekTasks[weekNum];
+        
+        if (weekTitle) weekTitle.textContent = weekData.title;
+        
+        daysGrid.innerHTML = '';
+        
+        for (let d = 1; d <= 7; d++) {
+            const tasks = weekData.days[d];
+            const dayProg = getDayProgress(weekNum, d);
+            const isDayComplete = dayProg.done === dayProg.total;
+            
+            const dayCard = document.createElement('div');
+            dayCard.className = `day-card${isDayComplete ? ' completed' : ''}`;
+            
+            const dayHeader = document.createElement('div');
+            dayHeader.className = 'day-header';
+            dayHeader.innerHTML = `
+                <span class="day-name">${dayNames[d - 1]}</span>
+                <span class="day-number">Día ${d}</span>
+            `;
+            
+            const dayTasks = document.createElement('div');
+            dayTasks.className = 'day-tasks';
+            
+            tasks.forEach((taskText, i) => {
+                const done = isTaskDone(weekNum, d, i);
+                const taskItem = document.createElement('label');
+                taskItem.className = `task-item${done ? ' completed' : ''}`;
+                
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.className = 'task-check';
+                checkbox.checked = done;
+                checkbox.dataset.week = weekNum;
+                checkbox.dataset.day = d;
+                checkbox.dataset.task = i;
+                
+                checkbox.addEventListener('change', (e) => {
+                    setTaskDone(weekNum, d, i, e.target.checked);
+                    taskItem.classList.toggle('completed', e.target.checked);
+                    updateWeekUI();
+                    updateStats();
+                });
+                
+                const taskLabel = document.createElement('span');
+                taskLabel.textContent = taskText;
+                
+                taskItem.appendChild(checkbox);
+                taskItem.appendChild(taskLabel);
+                dayTasks.appendChild(taskItem);
+            });
+            
+            dayCard.appendChild(dayHeader);
+            dayCard.appendChild(dayTasks);
+            daysGrid.appendChild(dayCard);
+        }
+        
+        updateWeekUI();
+        updateStats();
+    };
+    
+    const updateWeekUI = () => {
+        const wp = getWeekProgress(currentWeek);
+        if (weekFill) weekFill.style.width = `${wp.percent}%`;
+        if (weekPercent) weekPercent.textContent = `${wp.percent}%`;
+        
+        // Update day card completed state
+        const dayCards = daysGrid.querySelectorAll('.day-card');
+        dayCards.forEach((card, i) => {
+            const day = i + 1;
+            const dp = getDayProgress(currentWeek, day);
+            card.classList.toggle('completed', dp.done === dp.total);
+        });
+        
+        // Show celebration if week complete
+        if (celebration) {
+            celebration.classList.toggle('visible', wp.percent === 100);
+        }
+    };
+    
+    const updateStats = () => {
+        if (statStreak) statStreak.textContent = getStreak();
+        if (statTasks) statTasks.textContent = getTotalTasks();
+        if (statWeeks) statWeeks.textContent = getCompletedWeeks();
+    };
+    
+    // Week selector
+    document.querySelectorAll('.week-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelectorAll('.week-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            renderWeek(parseInt(btn.dataset.week));
+        });
+    });
+    
+    // Reset button
+    if (resetBtn) {
+        resetBtn.addEventListener('click', () => {
+            if (confirm('¿Seguro que quieres borrar todo tu progreso? Esta acción no se puede deshacer.')) {
+                progress = {};
+                save();
+                renderWeek(currentWeek);
+            }
+        });
+    }
+    
+    // Initial render
+    renderWeek(1);
+};
+
 /* ===== SMOOTH SCROLL ===== */
 const initSmoothScroll = () => {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -746,5 +1002,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initChords();
     initMetronome();
     initTuner();
+    initProgress();
     initSmoothScroll();
 });
